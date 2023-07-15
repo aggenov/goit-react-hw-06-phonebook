@@ -21,7 +21,7 @@ export const ContactItem = styled.li`
 
   cursor: pointer;
 
-  &: hover {
+  &:hover {
     background-color: #f0f0f0;
 
      button {
