@@ -28,7 +28,7 @@ export const ContactForm = () => {
   const handleSubmit = event => {
     event.preventDefault();
 
-    const newContactName = contacts.find(contact => contact.name === name);
+    const newContactName = contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase().trim());
     if (newContactName) {
       Notify.failure(`Name  "${name}"  is already in contacts`, Notify.init({
         clickToClose: true,
@@ -37,7 +37,7 @@ export const ContactForm = () => {
       return;
     }
 
-    const newContactNumber = contacts.find(contact => contact.number === number);
+    const newContactNumber = contacts.find(contact => contact.number.toLowerCase() === number.toLowerCase());
     if (newContactNumber) {
       Notify.failure(`Number   "${number}"  is already in contacts`, Notify.init({
         clickToClose: true,
